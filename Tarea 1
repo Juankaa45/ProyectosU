@@ -1,0 +1,73 @@
+import java.util.Arrays;
+
+class Producto {
+    String nombre;
+    double precio;
+
+    public Producto(String nombre, double precio) {
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+
+    @Override
+    public String toString() {
+        return nombre + " - $" + precio;
+    }
+}
+
+public class OrdenarProductos {
+    
+    public static void burbuja(Producto[] productos) {
+        int n = productos.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (productos[j].precio > productos[j + 1].precio) {
+                    Producto temp = productos[j];
+                    productos[j] = productos[j + 1];
+                    productos[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static void insercion(Producto[] productos) {
+        int n = productos.length;
+        for (int i = 1; i < n; i++) {
+            Producto clave = productos[i];
+            int j = i - 1;
+            while (j >= 0 && productos[j].precio > clave.precio) {
+                productos[j + 1] = productos[j];
+                j = j - 1;
+            }
+            productos[j + 1] = clave;
+        }
+    }
+
+    public static void main(String[] args) {
+        Producto[] productos = {
+            new Producto("Laptop", 1200.99),
+            new Producto("Celular", 699.50),
+            new Producto("Tablet", 450.75),
+            new Producto("Monitor", 300.99),
+            new Producto("Teclado", 29.99)
+        };
+
+        System.out.println("Productos originales:");
+        System.out.println(Arrays.toString(productos));
+
+        Producto[] productosBurbuja = Arrays.copyOf(productos, productos.length);
+        burbuja(productosBurbuja);
+        System.out.println("\nOrdenados con Burbuja:");
+        System.out.println(Arrays.toString(productosBurbuja));
+
+        Producto[] productosInsercion = Arrays.copyOf(productos, productos.length);
+        insercion(productosInsercion);
+        System.out.println("\nOrdenados con Inserción:");
+        System.out.println(Arrays.toString(productosInsercion));
+    }
+
+    @Override
+    public String toString() {
+        return "OrdenarProductos []";
+    }
+}
