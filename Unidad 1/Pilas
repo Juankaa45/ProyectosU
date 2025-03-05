@@ -1,0 +1,75 @@
+import java.awt.color.ProfileDataException;
+import  java.util.Stack;
+import java.util.Queue;
+import  java.util.Scanner;
+
+
+public class PilasYColas{
+
+    public static void main(String[] args) {
+        Scanner lector =new Scanner (System.in);
+
+        Stack<String> pilaOperaciones = new Stack<String> ();
+    String textoActual = "";
+
+
+
+
+    //ciclo infinito del mini editor
+
+    while (true) 
+    {
+
+    System.out.println("Texto actual en el editor: "+textoActual);
+    System.out.println("Seleccione una opcion: (1) Ingresar (2) Deshacer (3) Salir");
+    opcion = lector.nextInt();
+    
+         //LEER TEXTO 
+        lector.nextLine();
+            switch (opcion)
+     {
+                //Agregar textp:
+
+                case 1:
+                    System.out.println("Escribe tu texto");
+                    nuevoTexto = lector.nextLine();
+                    //agregar elemento a la pila
+                    pilaOperaciones.push(nuevoTexto);
+                    textoActual += nuevoTexto;
+                    break;
+                    //Eliminar el texto de la pila
+
+                case 2:
+                if(!pilaTexto.isEmpty())
+                {
+                    //sacar texto de la pila 
+
+                    textoActual = PilaTexto.pop();
+                }
+                else
+                {
+                    System.out.println("No hay texto para eliminar");
+                }
+                break;
+                case 3:
+                System.out.println("Cerrando...");
+                lector.close();
+                return;
+
+                default:
+                System.out.println("Opcion no valida...");
+             break;
+
+
+
+
+
+
+            }
+
+         }
+     }
+
+
+    }
+pilaTexti.isEmpty()
