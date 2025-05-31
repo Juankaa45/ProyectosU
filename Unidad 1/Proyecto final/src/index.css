@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.sidebar-item {
+  @apply flex items-center gap-2 px-4 py-3 rounded-md transition-all duration-200;
+}
+
+.sidebar-item:hover {
+  @apply bg-default-100;
+}
+
+.sidebar-item.active {
+  @apply bg-primary-50 text-primary-500;
+}
+
+.sidebar-icon {
+  @apply text-default-500;
+}
+
+.card-hover {
+  @apply transition-all duration-200 hover:shadow-md hover:translate-y-[-2px];
+}
+
+.task-item {
+  @apply flex items-center gap-3 p-3 border-b border-divider last:border-0;
+}
+
+.task-item:hover {
+  @apply bg-default-50;
+}
+
+.stat-card {
+  @apply bg-content1 rounded-lg p-4 flex flex-col gap-2;
+}
+
+.stat-card-value {
+  @apply text-2xl font-semibold;
+}
+
+.stat-card-label {
+  @apply text-default-500 text-sm;
+}
+
+.chart-container {
+  @apply bg-content1 rounded-lg p-4 h-[300px] flex flex-col;
+}
+
+.chart-title {
+  @apply text-lg font-medium mb-4;
+}
